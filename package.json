@@ -1,0 +1,44 @@
+{
+  "name": "dsh-client-ui-skin-kitty",
+  "version": "1.0.0",
+  "description": "Hello Kitty (凯蒂猫) theme skin for the DeepSeek Harness (DSH) Web UI — pink alias-token palette with a custom wallpaper.",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-web-ui",
+    "skin",
+    "theme",
+    "hello-kitty",
+    "kitty"
+  ],
+  "license": "MIT",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luongthimydieu/dsh-client-ui-skin-kitty.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luongthimydieu/dsh-client-ui-skin-kitty/issues"
+  },
+  "homepage": "https://github.com/luongthimydieu/dsh-client-ui-skin-kitty#readme",
+  "main": "theme.css",
+  "style": "theme.css",
+  "exports": {
+    ".": "./theme.css",
+    "./theme.css": "./theme.css",
+    "./theme.inline.css": "./theme.inline.css",
+    "./plugin": "./lib/client.js",
+    "./skin.json": "./skin.json"
+  },
+  "files": [
+    "theme.css",
+    "theme.inline.css",
+    "skin.json",
+    "assets/",
+    "lib/"
+  ],
+  "scripts": {
+    "inline": "node scripts/inline.mjs",
+    "pack": "npm pack"
+  }
+}

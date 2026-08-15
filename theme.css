@@ -1,0 +1,224 @@
+/* ==========================================================================
+ * Hello Kitty Theme  —  dsh-client-ui-skin-kitty
+ * --------------------------------------------------------------------------
+ * 针对 DeepSeek Harness (DSH) Web UI 的第三方皮肤。
+ * 机制：覆盖 --dsw-alias-* / --dsw-specific-* 语义别名 token（浅色 + 深色两套），
+ *       并用 .pI_x6G_frame 覆盖主框架背景为壁纸。
+ * 色系：凯蒂猫经典粉（#e75480 玫瑰粉 / #f48fb1 樱花粉）+ 奶白/奶油底 + 深梅子暗色。
+ * 壁纸：./assets/kitty-wallpaper.jpg（相对路径，整包一起分发即可）。
+ * ========================================================================== */
+
+/* ---------- 浅色（Light）调色板 ---------- */
+body {
+  /* 背景层 */
+  --dsw-alias-bg-base: #fff5f8 !important;
+  --dsw-alias-bg-layer-1: #fffbfd !important;
+  --dsw-alias-bg-layer-2: #fff0f5 !important;
+  --dsw-alias-bg-layer-3: #ffebf0 !important;
+  --dsw-alias-bg-module-platform: #fff0f5 !important;
+  --dsw-alias-bg-multi-select: #fff0f5 !important;
+  --dsw-alias-bg-overlay: #ffebf0 !important;
+  --dsw-alias-bg-skeleton: rgba(231, 84, 128, 0.08) !important;
+  --dsw-alias-bg-mask-drop: rgba(255, 255, 255, 0.72) !important;
+
+  /* 边框 */
+  --dsw-alias-border-l1: rgba(231, 84, 128, 0.10) !important;
+  --dsw-alias-border-l2: rgba(231, 84, 128, 0.16) !important;
+  --dsw-alias-border-l2-darkmode-thin: rgba(231, 84, 128, 0.16) !important;
+  --dsw-alias-border-l3: rgba(231, 84, 128, 0.22) !important;
+  --dsw-alias-border-l4: rgba(231, 84, 128, 0.28) !important;
+
+  /* 品牌 */
+  --dsw-alias-brand-primary: #e75480 !important;
+  --dsw-alias-brand-text: #e75480 !important;
+  --dsw-alias-brand-primary-invert: #ffffff !important;
+  --dsw-alias-brand-primary-new-colorprimary-new-color: #e75480 !important;
+
+  /* 按钮 */
+  --dsw-alias-button-info-fill: #e75480 !important;
+  --dsw-alias-button-info-hover: #f06292 !important;
+  --dsw-alias-button-primary-fill: #e75480 !important;
+  --dsw-alias-button-primary-hover: #f06292 !important;
+  --dsw-alias-button-primary-dimmed: #ffe4ec !important;
+  --dsw-alias-button-contrast-fill: #5a1f33 !important;
+  --dsw-alias-button-elevated-fill: #ffffff !important;
+  --dsw-alias-button-floating-fill: #ffffff !important;
+  --dsw-alias-button-floating-hover: #fff0f5 !important;
+  --dsw-alias-button-ghost-active-border: #d4548a !important;
+  --dsw-alias-button-ghost-active-fill: #ffe4ec !important;
+  --dsw-alias-button-ghost-active-hover: #ffd6e0 !important;
+  --dsw-alias-button-tool-bar-fill: rgba(231, 84, 128, 0.40) !important;
+  --dsw-alias-button-tool-bar-hover: rgba(231, 84, 128, 0.52) !important;
+  --dsw-alias-button-tool-bar-fill-invisible: rgba(231, 84, 128, 0.22) !important;
+
+  /* 交互态 */
+  --dsw-alias-interactive-bg-hover: rgba(231, 84, 128, 0.06) !important;
+  --dsw-alias-interactive-bg-hover-accent: rgba(231, 84, 128, 0.14) !important;
+  --dsw-alias-interactive-bg-active: rgba(231, 84, 128, 0.10) !important;
+  --dsw-alias-interactive-bg-hover-solid: #fff0f5 !important;
+
+  /* 文本 */
+  --dsw-alias-label-primary: #4a2233 !important;
+  --dsw-alias-label-secondary: #7a4358 !important;
+  --dsw-alias-label-tertiary: #a05f76 !important;
+  --dsw-alias-label-caption: #c97b98 !important;
+  --dsw-alias-label-dimmed: #ffd1dc !important;
+  --dsw-alias-label-primary-bluish: #e75480 !important;
+  --dsw-alias-label-primary-dimmed: #5a1f33 !important;
+  --dsw-alias-label-primary-foreground: #ffffff !important;
+  --dsw-alias-label-primary-inverted: #ffffff !important;
+
+  /* Markdown 代码 */
+  --dsw-alias-markdown-inline-code: #ffe4ec !important;
+  --dsw-alias-markdown-code-block: #fff5f8 !important;
+  --dsw-alias-markdown-code-block-banner: #fff5f8 !important;
+  --dsw-alias-markdown-code-segment-selected: #ffffff !important;
+  --dsw-alias-markdown-code-segment-unselected: #ffe4ec !important;
+  --dsw-alias-markdown-tag: #ffe4ec !important;
+  --dsw-alias-markdown-citation: #ffe4ec !important;
+  --dsw-alias-markdown-placeholder: #fff0f5 !important;
+
+  /* 滚动条 */
+  --dsw-alias-scrollbar-bg-l1: #ffd6e0 !important;
+  --dsw-alias-scrollbar-hover-l1: #f48fb1 !important;
+  --dsw-alias-scrollbar-bg-l2: #ffd6e0 !important;
+  --dsw-alias-scrollbar-hover-l2: #f48fb1 !important;
+
+  /* 语义状态（业务强调用粉；错误/成功/警告保留功能色并微调） */
+  --dsw-alias-state-business-primary: #e75480 !important;
+  --dsw-alias-state-business-tertiary: #ffd1dc !important;
+  --dsw-alias-state-error-primary: #e0265a !important;
+  --dsw-alias-state-error-secondary: #f45b7a !important;
+  --dsw-alias-state-success-primary: #2fb864 !important;
+  --dsw-alias-state-success-secondary: #5bd692 !important;
+  --dsw-alias-state-success-tertiary: #e8f8ee !important;
+  --dsw-alias-state-warn-label: #d97706 !important;
+  --dsw-alias-state-warn-primary: #f59e0b !important;
+  --dsw-alias-state-warn-secondary: #fbbf24 !important;
+  --dsw-alias-state-warn-tertiary: #fef3e2 !important;
+
+  /* 浮层 */
+  --dsw-alias-toast-bg: #5a1f33 !important;
+  --dsw-alias-tooltip-bg: #5a1f33 !important;
+
+  /* 具体表面 */
+  --dsw-specific-sidebar-fill: #ffe0e9 !important;
+  --dsw-specific-sidebar-nav-item-active: #ffd6e0 !important;
+  --dsw-specific-sidebar-nav-item-active-accent: #f48fb1 !important;
+  --dsw-specific-sidebar-nav-item-hover: #ffebf0 !important;
+  --dsw-specific-bubble: #ffebf0 !important;
+  --dsw-specific-bubble-highlight: #ffd6e0 !important;
+  --dsw-specific-selector: #fff0f5 !important;
+  --dsw-specific-tip: #fff0f5 !important;
+  --dsw-specific-input-major: #ffffff !important;
+  --dsw-specific-login-input: #fff5f8 !important;
+  --dsw-specific-menu: #ffebf0 !important;
+}
+
+/* ---------- 深色（Dark）调色板 ---------- */
+body[data-ds-dark-theme] {
+  --dsw-alias-bg-base: #2a1a22 !important;
+  --dsw-alias-bg-layer-1: #33202a !important;
+  --dsw-alias-bg-layer-2: #3b2730 !important;
+  --dsw-alias-bg-layer-3: #422c36 !important;
+  --dsw-alias-bg-module-platform: #3b2730 !important;
+  --dsw-alias-bg-multi-select: #3b2730 !important;
+  --dsw-alias-bg-overlay: #422c36 !important;
+  --dsw-alias-bg-skeleton: rgba(255, 255, 255, 0.08) !important;
+  --dsw-alias-bg-mask-drop: rgba(39, 27, 33, 0.72) !important;
+
+  --dsw-alias-border-l1: rgba(244, 143, 177, 0.10) !important;
+  --dsw-alias-border-l2: rgba(244, 143, 177, 0.16) !important;
+  --dsw-alias-border-l2-darkmode-thin: rgba(244, 143, 177, 0.16) !important;
+  --dsw-alias-border-l3: rgba(244, 143, 177, 0.22) !important;
+  --dsw-alias-border-l4: rgba(244, 143, 177, 0.28) !important;
+
+  --dsw-alias-brand-primary: #f48fb1 !important;
+  --dsw-alias-brand-text: #f48fb1 !important;
+  --dsw-alias-brand-primary-invert: #2a1a22 !important;
+  --dsw-alias-brand-primary-new-colorprimary-new-color: #f48fb1 !important;
+
+  --dsw-alias-button-info-fill: #e75480 !important;
+  --dsw-alias-button-info-hover: #f06292 !important;
+  --dsw-alias-button-primary-fill: #f48fb1 !important;
+  --dsw-alias-button-primary-hover: #f8bcd0 !important;
+  --dsw-alias-button-primary-dimmed: #3b2730 !important;
+  --dsw-alias-button-contrast-fill: #fdeef4 !important;
+  --dsw-alias-button-elevated-fill: #3b2730 !important;
+  --dsw-alias-button-floating-fill: #3b2730 !important;
+  --dsw-alias-button-floating-hover: #422c36 !important;
+  --dsw-alias-button-ghost-active-border: #8a4a5e !important;
+  --dsw-alias-button-ghost-active-fill: #4a2733 !important;
+  --dsw-alias-button-ghost-active-hover: #422c36 !important;
+  --dsw-alias-button-tool-bar-fill: rgba(244, 143, 177, 0.40) !important;
+  --dsw-alias-button-tool-bar-hover: rgba(244, 143, 177, 0.52) !important;
+  --dsw-alias-button-tool-bar-fill-invisible: rgba(244, 143, 177, 0.22) !important;
+
+  --dsw-alias-interactive-bg-hover: rgba(244, 143, 177, 0.08) !important;
+  --dsw-alias-interactive-bg-hover-accent: rgba(244, 143, 177, 0.18) !important;
+  --dsw-alias-interactive-bg-active: rgba(244, 143, 177, 0.12) !important;
+  --dsw-alias-interactive-bg-hover-solid: #422c36 !important;
+
+  --dsw-alias-label-primary: #fdeef4 !important;
+  --dsw-alias-label-secondary: #e8c3d1 !important;
+  --dsw-alias-label-tertiary: #c99bb0 !important;
+  --dsw-alias-label-caption: #a06b82 !important;
+  --dsw-alias-label-dimmed: #6b3a4a !important;
+  --dsw-alias-label-primary-bluish: #f48fb1 !important;
+  --dsw-alias-label-primary-dimmed: #f8bcd0 !important;
+  --dsw-alias-label-primary-foreground: #2a1a22 !important;
+  --dsw-alias-label-primary-inverted: #33202a !important;
+
+  --dsw-alias-markdown-inline-code: #3b2730 !important;
+  --dsw-alias-markdown-code-block: #33202a !important;
+  --dsw-alias-markdown-code-block-banner: #33202a !important;
+  --dsw-alias-markdown-code-segment-selected: #3b2730 !important;
+  --dsw-alias-markdown-code-segment-unselected: #33202a !important;
+  --dsw-alias-markdown-tag: #3b2730 !important;
+  --dsw-alias-markdown-citation: #3b2730 !important;
+  --dsw-alias-markdown-placeholder: #33202a !important;
+
+  --dsw-alias-scrollbar-bg-l1: #6b3a4a !important;
+  --dsw-alias-scrollbar-hover-l1: #8a4a5e !important;
+  --dsw-alias-scrollbar-bg-l2: #6b3a4a !important;
+  --dsw-alias-scrollbar-hover-l2: #8a4a5e !important;
+
+  --dsw-alias-state-business-primary: #f48fb1 !important;
+  --dsw-alias-state-business-tertiary: #4a2733 !important;
+  --dsw-alias-state-error-primary: #f45b7a !important;
+  --dsw-alias-state-error-secondary: #e0265a !important;
+  --dsw-alias-state-success-primary: #5bd692 !important;
+  --dsw-alias-state-success-secondary: #2fb864 !important;
+  --dsw-alias-state-success-tertiary: #1f3a2a !important;
+  --dsw-alias-state-warn-label: #fbbf24 !important;
+  --dsw-alias-state-warn-primary: #f59e0b !important;
+  --dsw-alias-state-warn-secondary: #d97706 !important;
+  --dsw-alias-state-warn-tertiary: #3a2e1a !important;
+
+  --dsw-alias-toast-bg: #422c36 !important;
+  --dsw-alias-tooltip-bg: #422c36 !important;
+
+  --dsw-specific-sidebar-fill: #241319 !important;
+  --dsw-specific-sidebar-nav-item-active: #3b2730 !important;
+  --dsw-specific-sidebar-nav-item-active-accent: #6b3a4a !important;
+  --dsw-specific-sidebar-nav-item-hover: #33202a !important;
+  --dsw-specific-bubble: #3b2730 !important;
+  --dsw-specific-bubble-highlight: #422c36 !important;
+  --dsw-specific-selector: #3b2730 !important;
+  --dsw-specific-tip: #3b2730 !important;
+  --dsw-specific-input-major: #33202a !important;
+  --dsw-specific-login-input: #2a1a22 !important;
+  --dsw-specific-menu: #422c36 !important;
+}
+
+/* ---------- 壁纸：用户指定照片（浅色，原图铺满） ---------- */
+.pI_x6G_frame {
+  background: url("./assets/kitty-wallpaper.jpg") center / cover no-repeat !important;
+}
+
+/* ---------- 壁纸：同一照片（深色，叠加暗色柔化保证文字可读） ---------- */
+body[data-ds-dark-theme] .pI_x6G_frame {
+  background:
+    linear-gradient(rgba(30, 18, 24, 0.45), rgba(30, 18, 24, 0.45)),
+    url("./assets/kitty-wallpaper.jpg") center / cover no-repeat !important;
+}

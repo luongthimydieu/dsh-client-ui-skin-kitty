@@ -1,0 +1,18 @@
+{
+  "id": "kitty",
+  "name": "Hello Kitty",
+  "nameZh": "凯蒂猫 / Hello Kitty",
+  "version": "1.0.0",
+  "type": "skin",
+  "target": "dsh-web-ui",
+  "colorScheme": ["light", "dark"],
+  "css": "theme.css",
+  "cssInline": "theme.inline.css",
+  "wallpaper": "assets/kitty-wallpaper.jpg",
+  "primary": "#e75480",
+  "accent": "#f48fb1",
+  "description": "Hello Kitty 粉色主题：玫瑰粉主色 + 樱花粉强调 + 奶白奶油底色，深色为深梅子暗色，背景使用用户指定的凯蒂猫壁纸。",
+  "descriptionEn": "Hello Kitty pink theme: rose-pink primary, sakura-pink accent, cream base; dark mode uses deep plum with pink accents, with a custom Kitty wallpaper background.",
+  "author": "",
+  "license": "MIT"
+}
