@@ -1,19 +1,19 @@
 /* ==========================================================================
  * Hello Kitty Theme  鈥? dsh-client-ui-skin-kitty
  * --------------------------------------------------------------------------
- * 閽堝 DeepSeek Harness (DSH) Web UI 鐨勭涓夋柟鐨偆銆? * 鏈哄埗锛氳鐩?--dsw-alias-* / --dsw-specific-* 璇箟鍒悕 token锛堟祬鑹?+ 娣辫壊涓ゅ锛夛紝
- *       骞剁敤 .pI_x6G_frame 瑕嗙洊涓绘鏋惰儗鏅负澹佺焊銆? * 鑹茬郴锛氬嚡钂傜尗缁忓吀绮夛紙#e75480 鐜懓绮?/ #f48fb1 妯辫姳绮夛級+ 濂剁櫧/濂舵补搴?+ 娣辨瀛愭殫鑹层€? * 澹佺焊锛?/assets/kitty-wallpaper.jpg锛堢浉瀵硅矾寰勶紝鏁村寘涓€璧峰垎鍙戝嵆鍙級銆? * ========================================================================== */
+ * DeepSeek Harness (DSH) Web UI 绗笁鏂圭毊鑲ゃ€? * 鏈哄埗锛氳鐩?--dsw-alias-* / --dsw-specific-* 璇箟 token锛堟祬鑹?+ 娣辫壊涓ゅ锛夛紝
+ *       骞剁敤 .pI_x6G_frame 瑕嗙洊涓绘鏋惰儗鏅负澹佺焊銆? * 鍏抽敭锛氭墍鏈夎〃闈㈣儗鏅娇鐢ㄥ崐閫忔槑 rgba锛岃搴曞眰澹佺焊閫忓嚭鏉ャ€? * 鑹茬郴锛氬嚡钂傜尗缁忓吀绮夛紙#e75480 / #f48fb1锛? 濂剁櫧濂舵补搴?+ 娣辨瀛愭殫鑹层€? * ========================================================================== */
 
 /* ---------- 娴呰壊锛圠ight锛夎皟鑹叉澘 ---------- */
 body {
-  /* 鑳屾櫙灞?*/
-  --dsw-alias-bg-base: #fff5f8 !important;
-  --dsw-alias-bg-layer-1: #fffbfd !important;
-  --dsw-alias-bg-layer-2: #fff0f5 !important;
-  --dsw-alias-bg-layer-3: #ffebf0 !important;
-  --dsw-alias-bg-module-platform: #fff0f5 !important;
-  --dsw-alias-bg-multi-select: #fff0f5 !important;
-  --dsw-alias-bg-overlay: #ffebf0 !important;
+  /* 鑳屾櫙灞傦紙鍗婇€忔槑锛岃澹佺焊閫忓嚭锛?*/
+  --dsw-alias-bg-base: rgba(255, 245, 248, 0.52) !important;
+  --dsw-alias-bg-layer-1: rgba(255, 251, 253, 0.60) !important;
+  --dsw-alias-bg-layer-2: rgba(255, 240, 245, 0.68) !important;
+  --dsw-alias-bg-layer-3: rgba(255, 235, 240, 0.76) !important;
+  --dsw-alias-bg-module-platform: rgba(255, 240, 245, 0.70) !important;
+  --dsw-alias-bg-multi-select: rgba(255, 240, 245, 0.70) !important;
+  --dsw-alias-bg-overlay: rgba(255, 235, 240, 0.88) !important;
   --dsw-alias-bg-skeleton: rgba(231, 84, 128, 0.08) !important;
   --dsw-alias-bg-mask-drop: rgba(255, 255, 255, 0.72) !important;
 
@@ -35,14 +35,14 @@ body {
   --dsw-alias-button-info-hover: #f06292 !important;
   --dsw-alias-button-primary-fill: #e75480 !important;
   --dsw-alias-button-primary-hover: #f06292 !important;
-  --dsw-alias-button-primary-dimmed: #ffe4ec !important;
+  --dsw-alias-button-primary-dimmed: rgba(255, 228, 236, 0.85) !important;
   --dsw-alias-button-contrast-fill: #5a1f33 !important;
-  --dsw-alias-button-elevated-fill: #ffffff !important;
-  --dsw-alias-button-floating-fill: #ffffff !important;
-  --dsw-alias-button-floating-hover: #fff0f5 !important;
+  --dsw-alias-button-elevated-fill: rgba(255, 255, 255, 0.92) !important;
+  --dsw-alias-button-floating-fill: rgba(255, 255, 255, 0.92) !important;
+  --dsw-alias-button-floating-hover: rgba(255, 240, 245, 0.85) !important;
   --dsw-alias-button-ghost-active-border: #d4548a !important;
-  --dsw-alias-button-ghost-active-fill: #ffe4ec !important;
-  --dsw-alias-button-ghost-active-hover: #ffd6e0 !important;
+  --dsw-alias-button-ghost-active-fill: rgba(255, 228, 236, 0.85) !important;
+  --dsw-alias-button-ghost-active-hover: rgba(255, 214, 224, 0.85) !important;
   --dsw-alias-button-tool-bar-fill: rgba(231, 84, 128, 0.40) !important;
   --dsw-alias-button-tool-bar-hover: rgba(231, 84, 128, 0.52) !important;
   --dsw-alias-button-tool-bar-fill-invisible: rgba(231, 84, 128, 0.22) !important;
@@ -51,7 +51,7 @@ body {
   --dsw-alias-interactive-bg-hover: rgba(231, 84, 128, 0.06) !important;
   --dsw-alias-interactive-bg-hover-accent: rgba(231, 84, 128, 0.14) !important;
   --dsw-alias-interactive-bg-active: rgba(231, 84, 128, 0.10) !important;
-  --dsw-alias-interactive-bg-hover-solid: #fff0f5 !important;
+  --dsw-alias-interactive-bg-hover-solid: rgba(255, 240, 245, 0.80) !important;
 
   /* 鏂囨湰 */
   --dsw-alias-label-primary: #4a2233 !important;
@@ -65,14 +65,14 @@ body {
   --dsw-alias-label-primary-inverted: #ffffff !important;
 
   /* Markdown 浠ｇ爜 */
-  --dsw-alias-markdown-inline-code: #ffe4ec !important;
-  --dsw-alias-markdown-code-block: #fff5f8 !important;
-  --dsw-alias-markdown-code-block-banner: #fff5f8 !important;
-  --dsw-alias-markdown-code-segment-selected: #ffffff !important;
-  --dsw-alias-markdown-code-segment-unselected: #ffe4ec !important;
-  --dsw-alias-markdown-tag: #ffe4ec !important;
-  --dsw-alias-markdown-citation: #ffe4ec !important;
-  --dsw-alias-markdown-placeholder: #fff0f5 !important;
+  --dsw-alias-markdown-inline-code: rgba(255, 228, 236, 0.85) !important;
+  --dsw-alias-markdown-code-block: rgba(255, 245, 248, 0.90) !important;
+  --dsw-alias-markdown-code-block-banner: rgba(255, 245, 248, 0.90) !important;
+  --dsw-alias-markdown-code-segment-selected: rgba(255, 255, 255, 0.92) !important;
+  --dsw-alias-markdown-code-segment-unselected: rgba(255, 228, 236, 0.85) !important;
+  --dsw-alias-markdown-tag: rgba(255, 228, 236, 0.85) !important;
+  --dsw-alias-markdown-citation: rgba(255, 228, 236, 0.85) !important;
+  --dsw-alias-markdown-placeholder: rgba(255, 240, 245, 0.75) !important;
 
   /* 婊氬姩鏉?*/
   --dsw-alias-scrollbar-bg-l1: #ffd6e0 !important;
@@ -80,46 +80,46 @@ body {
   --dsw-alias-scrollbar-bg-l2: #ffd6e0 !important;
   --dsw-alias-scrollbar-hover-l2: #f48fb1 !important;
 
-  /* 璇箟鐘舵€侊紙涓氬姟寮鸿皟鐢ㄧ矇锛涢敊璇?鎴愬姛/璀﹀憡淇濈暀鍔熻兘鑹插苟寰皟锛?*/
+  /* 璇箟鐘舵€?*/
   --dsw-alias-state-business-primary: #e75480 !important;
-  --dsw-alias-state-business-tertiary: #ffd1dc !important;
+  --dsw-alias-state-business-tertiary: rgba(255, 209, 220, 0.80) !important;
   --dsw-alias-state-error-primary: #e0265a !important;
   --dsw-alias-state-error-secondary: #f45b7a !important;
   --dsw-alias-state-success-primary: #2fb864 !important;
   --dsw-alias-state-success-secondary: #5bd692 !important;
-  --dsw-alias-state-success-tertiary: #e8f8ee !important;
+  --dsw-alias-state-success-tertiary: rgba(232, 248, 238, 0.85) !important;
   --dsw-alias-state-warn-label: #d97706 !important;
   --dsw-alias-state-warn-primary: #f59e0b !important;
   --dsw-alias-state-warn-secondary: #fbbf24 !important;
-  --dsw-alias-state-warn-tertiary: #fef3e2 !important;
+  --dsw-alias-state-warn-tertiary: rgba(254, 243, 226, 0.85) !important;
 
   /* 娴眰 */
   --dsw-alias-toast-bg: #5a1f33 !important;
   --dsw-alias-tooltip-bg: #5a1f33 !important;
 
-  /* 鍏蜂綋琛ㄩ潰 */
-  --dsw-specific-sidebar-fill: #ffe0e9 !important;
-  --dsw-specific-sidebar-nav-item-active: #ffd6e0 !important;
+  /* 鍏蜂綋琛ㄩ潰锛堝崐閫忔槑锛岃澹佺焊閫忓嚭锛?*/
+  --dsw-specific-sidebar-fill: rgba(255, 224, 233, 0.55) !important;
+  --dsw-specific-sidebar-nav-item-active: rgba(255, 214, 224, 0.75) !important;
   --dsw-specific-sidebar-nav-item-active-accent: #f48fb1 !important;
-  --dsw-specific-sidebar-nav-item-hover: #ffebf0 !important;
-  --dsw-specific-bubble: #ffebf0 !important;
-  --dsw-specific-bubble-highlight: #ffd6e0 !important;
-  --dsw-specific-selector: #fff0f5 !important;
-  --dsw-specific-tip: #fff0f5 !important;
-  --dsw-specific-input-major: #ffffff !important;
-  --dsw-specific-login-input: #fff5f8 !important;
-  --dsw-specific-menu: #ffebf0 !important;
+  --dsw-specific-sidebar-nav-item-hover: rgba(255, 235, 240, 0.70) !important;
+  --dsw-specific-bubble: rgba(255, 235, 240, 0.80) !important;
+  --dsw-specific-bubble-highlight: rgba(255, 214, 224, 0.80) !important;
+  --dsw-specific-selector: rgba(255, 240, 245, 0.75) !important;
+  --dsw-specific-tip: rgba(255, 240, 245, 0.75) !important;
+  --dsw-specific-input-major: rgba(255, 255, 255, 0.90) !important;
+  --dsw-specific-login-input: rgba(255, 245, 248, 0.90) !important;
+  --dsw-specific-menu: rgba(255, 235, 240, 0.90) !important;
 }
 
 /* ---------- 娣辫壊锛圖ark锛夎皟鑹叉澘 ---------- */
 body[data-ds-dark-theme] {
-  --dsw-alias-bg-base: #2a1a22 !important;
-  --dsw-alias-bg-layer-1: #33202a !important;
-  --dsw-alias-bg-layer-2: #3b2730 !important;
-  --dsw-alias-bg-layer-3: #422c36 !important;
-  --dsw-alias-bg-module-platform: #3b2730 !important;
-  --dsw-alias-bg-multi-select: #3b2730 !important;
-  --dsw-alias-bg-overlay: #422c36 !important;
+  --dsw-alias-bg-base: rgba(42, 26, 34, 0.70) !important;
+  --dsw-alias-bg-layer-1: rgba(51, 32, 42, 0.76) !important;
+  --dsw-alias-bg-layer-2: rgba(59, 39, 48, 0.82) !important;
+  --dsw-alias-bg-layer-3: rgba(66, 44, 54, 0.86) !important;
+  --dsw-alias-bg-module-platform: rgba(59, 39, 48, 0.82) !important;
+  --dsw-alias-bg-multi-select: rgba(59, 39, 48, 0.82) !important;
+  --dsw-alias-bg-overlay: rgba(66, 44, 54, 0.90) !important;
   --dsw-alias-bg-skeleton: rgba(255, 255, 255, 0.08) !important;
   --dsw-alias-bg-mask-drop: rgba(39, 27, 33, 0.72) !important;
 
@@ -138,14 +138,14 @@ body[data-ds-dark-theme] {
   --dsw-alias-button-info-hover: #f06292 !important;
   --dsw-alias-button-primary-fill: #f48fb1 !important;
   --dsw-alias-button-primary-hover: #f8bcd0 !important;
-  --dsw-alias-button-primary-dimmed: #3b2730 !important;
+  --dsw-alias-button-primary-dimmed: rgba(59, 39, 48, 0.85) !important;
   --dsw-alias-button-contrast-fill: #fdeef4 !important;
-  --dsw-alias-button-elevated-fill: #3b2730 !important;
-  --dsw-alias-button-floating-fill: #3b2730 !important;
-  --dsw-alias-button-floating-hover: #422c36 !important;
+  --dsw-alias-button-elevated-fill: rgba(59, 39, 48, 0.88) !important;
+  --dsw-alias-button-floating-fill: rgba(59, 39, 48, 0.88) !important;
+  --dsw-alias-button-floating-hover: rgba(66, 44, 54, 0.88) !important;
   --dsw-alias-button-ghost-active-border: #8a4a5e !important;
-  --dsw-alias-button-ghost-active-fill: #4a2733 !important;
-  --dsw-alias-button-ghost-active-hover: #422c36 !important;
+  --dsw-alias-button-ghost-active-fill: rgba(74, 39, 51, 0.85) !important;
+  --dsw-alias-button-ghost-active-hover: rgba(66, 44, 54, 0.88) !important;
   --dsw-alias-button-tool-bar-fill: rgba(244, 143, 177, 0.40) !important;
   --dsw-alias-button-tool-bar-hover: rgba(244, 143, 177, 0.52) !important;
   --dsw-alias-button-tool-bar-fill-invisible: rgba(244, 143, 177, 0.22) !important;
@@ -153,7 +153,7 @@ body[data-ds-dark-theme] {
   --dsw-alias-interactive-bg-hover: rgba(244, 143, 177, 0.08) !important;
   --dsw-alias-interactive-bg-hover-accent: rgba(244, 143, 177, 0.18) !important;
   --dsw-alias-interactive-bg-active: rgba(244, 143, 177, 0.12) !important;
-  --dsw-alias-interactive-bg-hover-solid: #422c36 !important;
+  --dsw-alias-interactive-bg-hover-solid: rgba(66, 44, 54, 0.85) !important;
 
   --dsw-alias-label-primary: #fdeef4 !important;
   --dsw-alias-label-secondary: #e8c3d1 !important;
@@ -165,14 +165,14 @@ body[data-ds-dark-theme] {
   --dsw-alias-label-primary-foreground: #2a1a22 !important;
   --dsw-alias-label-primary-inverted: #33202a !important;
 
-  --dsw-alias-markdown-inline-code: #3b2730 !important;
-  --dsw-alias-markdown-code-block: #33202a !important;
-  --dsw-alias-markdown-code-block-banner: #33202a !important;
-  --dsw-alias-markdown-code-segment-selected: #3b2730 !important;
-  --dsw-alias-markdown-code-segment-unselected: #33202a !important;
-  --dsw-alias-markdown-tag: #3b2730 !important;
-  --dsw-alias-markdown-citation: #3b2730 !important;
-  --dsw-alias-markdown-placeholder: #33202a !important;
+  --dsw-alias-markdown-inline-code: rgba(59, 39, 48, 0.85) !important;
+  --dsw-alias-markdown-code-block: rgba(51, 32, 42, 0.88) !important;
+  --dsw-alias-markdown-code-block-banner: rgba(51, 32, 42, 0.88) !important;
+  --dsw-alias-markdown-code-segment-selected: rgba(59, 39, 48, 0.88) !important;
+  --dsw-alias-markdown-code-segment-unselected: rgba(51, 32, 42, 0.88) !important;
+  --dsw-alias-markdown-tag: rgba(59, 39, 48, 0.85) !important;
+  --dsw-alias-markdown-citation: rgba(59, 39, 48, 0.85) !important;
+  --dsw-alias-markdown-placeholder: rgba(51, 32, 42, 0.85) !important;
 
   --dsw-alias-scrollbar-bg-l1: #6b3a4a !important;
   --dsw-alias-scrollbar-hover-l1: #8a4a5e !important;
@@ -180,31 +180,31 @@ body[data-ds-dark-theme] {
   --dsw-alias-scrollbar-hover-l2: #8a4a5e !important;
 
   --dsw-alias-state-business-primary: #f48fb1 !important;
-  --dsw-alias-state-business-tertiary: #4a2733 !important;
+  --dsw-alias-state-business-tertiary: rgba(74, 39, 51, 0.85) !important;
   --dsw-alias-state-error-primary: #f45b7a !important;
   --dsw-alias-state-error-secondary: #e0265a !important;
   --dsw-alias-state-success-primary: #5bd692 !important;
   --dsw-alias-state-success-secondary: #2fb864 !important;
-  --dsw-alias-state-success-tertiary: #1f3a2a !important;
+  --dsw-alias-state-success-tertiary: rgba(31, 58, 42, 0.85) !important;
   --dsw-alias-state-warn-label: #fbbf24 !important;
   --dsw-alias-state-warn-primary: #f59e0b !important;
   --dsw-alias-state-warn-secondary: #d97706 !important;
-  --dsw-alias-state-warn-tertiary: #3a2e1a !important;
+  --dsw-alias-state-warn-tertiary: rgba(58, 46, 26, 0.85) !important;
 
-  --dsw-alias-toast-bg: #422c36 !important;
-  --dsw-alias-tooltip-bg: #422c36 !important;
+  --dsw-alias-toast-bg: rgba(66, 44, 54, 0.94) !important;
+  --dsw-alias-tooltip-bg: rgba(66, 44, 54, 0.94) !important;
 
-  --dsw-specific-sidebar-fill: #241319 !important;
-  --dsw-specific-sidebar-nav-item-active: #3b2730 !important;
+  --dsw-specific-sidebar-fill: rgba(36, 19, 25, 0.70) !important;
+  --dsw-specific-sidebar-nav-item-active: rgba(59, 39, 48, 0.82) !important;
   --dsw-specific-sidebar-nav-item-active-accent: #6b3a4a !important;
-  --dsw-specific-sidebar-nav-item-hover: #33202a !important;
-  --dsw-specific-bubble: #3b2730 !important;
-  --dsw-specific-bubble-highlight: #422c36 !important;
-  --dsw-specific-selector: #3b2730 !important;
-  --dsw-specific-tip: #3b2730 !important;
-  --dsw-specific-input-major: #33202a !important;
-  --dsw-specific-login-input: #2a1a22 !important;
-  --dsw-specific-menu: #422c36 !important;
+  --dsw-specific-sidebar-nav-item-hover: rgba(51, 32, 42, 0.80) !important;
+  --dsw-specific-bubble: rgba(59, 39, 48, 0.85) !important;
+  --dsw-specific-bubble-highlight: rgba(66, 44, 54, 0.88) !important;
+  --dsw-specific-selector: rgba(59, 39, 48, 0.85) !important;
+  --dsw-specific-tip: rgba(59, 39, 48, 0.85) !important;
+  --dsw-specific-input-major: rgba(51, 32, 42, 0.90) !important;
+  --dsw-specific-login-input: rgba(42, 26, 34, 0.90) !important;
+  --dsw-specific-menu: rgba(66, 44, 54, 0.90) !important;
 }
 
 /* ---------- 澹佺焊锛氱敤鎴锋寚瀹氱収鐗囷紙娴呰壊锛屽師鍥鹃摵婊★級 ---------- */
