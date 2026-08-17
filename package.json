@@ -1,6 +1,7 @@
 {
   "name": "dsh-client-ui-skin-kitty",
   "version": "1.0.0",
+  "type": "module",
   "description": "Hello Kitty (凯蒂猫) theme skin + workspace plugin for the DeepSeek Harness (DSH) Web UI — pink alias-token palette with a custom wallpaper, plus a right-side workspace file panel (tree + preview) and a per-conversation token-usage bar chart.",
   "keywords": [
     "dsh",
@@ -25,15 +26,33 @@
     "url": "https://github.com/luongthimydieu/dsh-client-ui-skin-kitty/issues"
   },
   "homepage": "https://github.com/luongthimydieu/dsh-client-ui-skin-kitty#readme",
-  "main": "theme.css",
+  "main": "lib/index.js",
   "style": "theme.css",
   "exports": {
-    ".": "./theme.css",
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
     "./theme.css": "./theme.css",
     "./theme.inline.css": "./theme.inline.css",
-    "./skin.json": "./skin.json",
-    "./host": "./lib/index.js",
-    "./client": "./lib/client.js"
+    "./skin.json": "./skin.json"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-client-runtime": "*",
+    "@deepseek-ai/dsh-client-ui-slots": "*"
   },
   "files": [
     "theme.css",
