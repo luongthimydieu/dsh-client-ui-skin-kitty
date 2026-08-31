@@ -2,7 +2,7 @@
   "name": "dsh-client-ui-skin-kitty",
   "version": "1.0.0",
   "type": "module",
-  "description": "Hello Kitty (凯蒂猫) theme skin + workspace plugin for the DeepSeek Harness (DSH) Web UI — pink alias-token palette with a custom wallpaper, plus a right-side workspace file panel (tree + preview) and a per-conversation token-usage bar chart.",
+  "description": "Hello Kitty (凯蒂猫) theme skin for the DeepSeek Harness (DSH) Web UI — pink alias-token palette with a custom wallpaper. Static profile plugin: the theme and wallpaper restore automatically on every Harness start.",
   "keywords": [
     "dsh",
     "deepseek-harness",
@@ -10,11 +10,7 @@
     "skin",
     "theme",
     "hello-kitty",
-    "kitty",
-    "workspace",
-    "file-panel",
-    "token-usage",
-    "plugin"
+    "kitty"
   ],
   "license": "MIT",
   "author": "",

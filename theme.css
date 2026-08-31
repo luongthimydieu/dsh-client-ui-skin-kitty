@@ -3,7 +3,7 @@
  * --------------------------------------------------------------------------
  * DeepSeek Harness (DSH) Web UI 第三方皮肤。
  * 机制：覆盖 --dsw-alias-* / --dsw-specific-* 语义 token（浅色 + 深色两套），
- *       并用 .pI_x6G_frame 覆盖主框架背景为壁纸。
+ *       并用 .m45BUG_frame 覆盖主框架背景为壁纸。
  * 关键：所有表面背景使用半透明 rgba，让底层壁纸透出来。
  * 色系：凯蒂猫经典粉（#e75480 / #f48fb1）+ 奶白奶油底 + 深梅子暗色。
  * ========================================================================== */
@@ -212,12 +212,12 @@ body[data-ds-dark-theme] {
 }
 
 /* ---------- 壁纸：用户指定照片（浅色，原图铺满） ---------- */
-.pI_x6G_frame {
+.m45BUG_frame {
   background: url("/kitty/wallpaper.jpg") center / cover no-repeat !important;
 }
 
 /* ---------- 壁纸：同一照片（深色，叠加暗色柔化保证文字可读） ---------- */
-body[data-ds-dark-theme] .pI_x6G_frame {
+body[data-ds-dark-theme] .m45BUG_frame {
   background:
     linear-gradient(rgba(30, 18, 24, 0.45), rgba(30, 18, 24, 0.45)),
     url("/kitty/wallpaper.jpg") center / cover no-repeat !important;
