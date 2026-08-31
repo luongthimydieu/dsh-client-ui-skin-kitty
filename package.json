@@ -37,7 +37,8 @@
     },
     "./theme.css": "./theme.css",
     "./theme.inline.css": "./theme.inline.css",
-    "./skin.json": "./skin.json"
+    "./skin.json": "./skin.json",
+    "./package.json": "./package.json"
   },
   "dsh": {
     "bundle": {
