@@ -9,15 +9,16 @@
 
 ```
 dsh-client-ui-skin-kitty/
-├── package.json           # npm 清单（皮肤 + 插件双入口）
+├── package.json           # npm 清单（皮肤 + 插件双入口，声明 dsh.bundle.patch）
 ├── skin.json              # 皮肤元数据（皮肤中心读取）
-├── theme.css              # Hello Kitty 主题（浅/深色，壁纸走相对路径）
+├── cordis.patch.yml       # ★ bundle patch：把本包注册为静态 loader entry
+├── theme.css              # Hello Kitty 主题（浅/深色，壁纸走 /kitty/wallpaper.jpg）
 ├── theme.inline.css       # 单文件版：壁纸 base64 内联，可直接注入
 ├── assets/
 │   └── kitty-wallpaper.jpg    # 壁纸照片（替换它即可换壁纸）
 ├── lib/
-│   ├── index.js           # ★ Host 插件半：文件服务 + token 统计 + /ws-file 路由
-│   └── client.js          # ★ Client 插件半：文件面板 + 预览 + 用量柱状图
+│   ├── index.js           # ★ Host 插件半：文件服务 + token 统计 + /ws-file + /kitty/* 路由
+│   └── client.js          # ★ Client 插件半：文件面板 + 预览 + 用量柱状图 + 主题注入
 ├── scripts/inline.mjs     # 一键重新生成 theme.inline.css
 ├── README.md
 └── LICENSE
@@ -32,6 +33,7 @@ dsh-client-ui-skin-kitty/
 | 方式 | 说明 |
 |---|---|
 | 直接注入 CSS | 把 `theme.inline.css` 追加到 DSH 前端编译产物：`cat theme.inline.css >> node_modules/@deepseek-ai/dsh-web-frontend/dist/assets/index-*.css`，刷新生效 |
+| 静态插件（推荐） | 把本包安装进 DSH profile（见下文），插件随 Harness 启动自动加载：右侧栏 + 主题背景一起恢复 |
 | 皮肤中心 | `npm install <本目录>` 或发布后 `npm install dsh-client-ui-skin-kitty`，交给 dsh-web-ui 皮肤中心加载 |
 | 换壁纸 | 替换 `assets/kitty-wallpaper.jpg`，再 `npm run inline` |
 
@@ -42,18 +44,32 @@ dsh-client-ui-skin-kitty/
 - **Host 半** 提供：`ws/tree`（列文件树）、`ws/read`（读文本）、`ws/stats`（token 用量）、`/ws-file`（HTTP 提供文件给图片/PDF 预览）。
 - **Client 半** 渲染：右侧「工作区文件」面板、独立预览弹窗、左侧「本对话 tokens」柱状图。
 
-**作为动态插件运行（本仓库当前形态）：**
+**作为动态插件运行（仅临时体验）：**
 
 把两个文件的内容分别作为 `cordis_define` 的 `code.host` 和 `code.client` 提交，再 `cordis_run` 激活即可。两个文件都已经是 `return { apply(ctx) {...} }` 插件体，可直接粘贴。
 
 > 注意：动态插件跟随当前会话，**刷新页面后需要重新 `cordis_run` 激活**。
 
-**升级为静态插件（刷新/重启自动恢复）：**
+**升级为静态插件（刷新/重启自动恢复，本仓库当前形态 ✅）：**
 
-把两个文件改成 DSH 的静态插件格式后，写进 DSH 的插件配置：
+仓库已完成静态化改造：
 
-- `lib/index.js`（Host）：把 `return { apply(ctx) {...} }` 改成 `export function apply(ctx) {...}`。
-- `lib/client.js`（Client）：改成 `window.__ModuleLoader__.load({ id: "dsh-client-ui-skin-kitty", factory: (require) => { ...; return { apply, inject }; } })`。
+1. `package.json` 声明 `"dsh": { "bundle": { "patch": "./cordis.patch.yml" }, "client": {...} }`。
+2. `cordis.patch.yml` 把本包注册为一条静态 loader entry。
+3. `lib/index.js`（Host）已是 `export function apply(ctx)`；`lib/client.js`（Client）已是 `window.__ModuleLoader__.load(...)` 格式。
+
+**安装进 DSH profile（桌面端/Web 端都会在重启后自动加载）：**
+
+```bash
+# 在 DSH 的 web profile 里安装本包（路径换成你的实际路径）
+dsh plugin --profile web add file:/path/to/dsh-client-ui-skin-kitty
+
+# 或在 DSH Desktop 中：把本目录作为插件源安装后，重启 Harness
+```
+
+安装后 `dsh plugin` 会把它追加到 profile 的 `dsh.profile.bundles`，重启 Harness 即生效：
+- **右侧栏**（工作区文件面板 + 用量图）随启动自动打开；
+- **Kitty 背景主题**由 Client 半注入 `/kitty/theme.css`（Host 半提供），同样随启动恢复。
 
 具体字段以 DSH 当前版本的静态插件加载规范为准。
 

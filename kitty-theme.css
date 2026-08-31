@@ -1,0 +1,106 @@
+/* ==========================================================================
+ * Hello Kitty Theme  (dsh-client-ui-skin-kitty)
+ * 保留 --dsw-alias-* token 粉色主题，壁纸使用用户指定的 Hello Kitty 图片。
+ * ========================================================================== */
+
+/* ---------- 浅色（Light）调色板 ---------- */
+body{
+  --dsw-alias-brand-primary:#e75480 !important;
+  --dsw-alias-brand-text:#e75480 !important;
+  --dsw-alias-brand-primary-invert:#ffffff !important;
+  --dsw-alias-brand-primary-new-colorprimary-new-color:#e75480 !important;
+  --dsw-alias-state-business-primary:#e75480 !important;
+  --dsw-alias-state-business-tertiary:#ffd1dc !important;
+  --dsw-alias-button-info-fill:#e75480 !important;
+  --dsw-alias-button-info-hover:#f06292 !important;
+  --dsw-alias-button-primary-fill:#e75480 !important;
+  --dsw-alias-button-primary-hover:#f06292 !important;
+  --dsw-alias-bg-base:#fff5f8 !important;
+  --dsw-alias-bg-layer-1:#fffbfd !important;
+  --dsw-alias-bg-layer-2:#fff0f5 !important;
+  --dsw-alias-bg-layer-3:#ffebf0 !important;
+  --dsw-alias-bg-module-platform:#fff0f5 !important;
+  --dsw-alias-bg-multi-select:#fff0f5 !important;
+  --dsw-alias-bg-overlay:#ffebf0 !important;
+  --dsw-specific-sidebar-fill:#ffe0e9 !important;
+  --dsw-specific-sidebar-nav-item-active:#ffd6e0 !important;
+  --dsw-specific-sidebar-nav-item-active-accent:#f48fb1 !important;
+  --dsw-specific-sidebar-nav-item-hover:#ffebf0 !important;
+  --dsw-specific-bubble:#ffebf0 !important;
+  --dsw-specific-bubble-highlight:#ffd6e0 !important;
+  --dsw-specific-selector:#fff0f5 !important;
+  --dsw-specific-tip:#fff0f5 !important;
+  --dsw-specific-input-major:#ffffff !important;
+  --dsw-specific-login-input:#fff5f8 !important;
+  --dsw-alias-interactive-bg-hover-accent:rgba(231,84,128,0.14) !important;
+  --dsw-alias-interactive-bg-active:rgba(231,84,128,0.10) !important;
+  --dsw-alias-label-primary-bluish:#e75480 !important;
+  --dsw-alias-markdown-inline-code:#ffe4ec !important;
+  --dsw-alias-markdown-code-block:#fff5f8 !important;
+  --dsw-alias-markdown-code-block-banner:#fff5f8 !important;
+  --dsw-alias-markdown-code-segment-selected:#ffffff !important;
+  --dsw-alias-markdown-code-segment-unselected:#ffe4ec !important;
+  --dsw-alias-markdown-tag:#ffe4ec !important;
+  --dsw-alias-markdown-citation:#ffe4ec !important;
+  --dsw-alias-markdown-placeholder:#fff0f5 !important;
+  --dsw-alias-scrollbar-bg-l1:#ffd6e0 !important;
+  --dsw-alias-scrollbar-hover-l1:#f48fb1 !important;
+  --dsw-alias-scrollbar-bg-l2:#ffd6e0 !important;
+  --dsw-alias-scrollbar-hover-l2:#f48fb1 !important;
+}
+
+/* ---------- 深色（Dark）调色板 ---------- */
+body[data-ds-dark-theme]{
+  --dsw-alias-brand-primary:#f48fb1 !important;
+  --dsw-alias-brand-text:#f48fb1 !important;
+  --dsw-alias-brand-primary-invert:#2a1a22 !important;
+  --dsw-alias-brand-primary-new-colorprimary-new-color:#f48fb1 !important;
+  --dsw-alias-state-business-primary:#f48fb1 !important;
+  --dsw-alias-state-business-tertiary:#4a2733 !important;
+  --dsw-alias-button-info-fill:#e75480 !important;
+  --dsw-alias-button-info-hover:#f06292 !important;
+  --dsw-alias-button-primary-fill:#f48fb1 !important;
+  --dsw-alias-button-primary-hover:#f8bcd0 !important;
+  --dsw-alias-bg-base:#2a1a22 !important;
+  --dsw-alias-bg-layer-1:#33202a !important;
+  --dsw-alias-bg-layer-2:#3b2730 !important;
+  --dsw-alias-bg-layer-3:#422c36 !important;
+  --dsw-alias-bg-module-platform:#3b2730 !important;
+  --dsw-alias-bg-multi-select:#3b2730 !important;
+  --dsw-alias-bg-overlay:#422c36 !important;
+  --dsw-specific-sidebar-fill:#241319 !important;
+  --dsw-specific-sidebar-nav-item-active:#3b2730 !important;
+  --dsw-specific-sidebar-nav-item-active-accent:#6b3a4a !important;
+  --dsw-specific-sidebar-nav-item-hover:#33202a !important;
+  --dsw-specific-bubble:#3b2730 !important;
+  --dsw-specific-bubble-highlight:#422c36 !important;
+  --dsw-specific-selector:#3b2730 !important;
+  --dsw-specific-tip:#3b2730 !important;
+  --dsw-specific-input-major:#33202a !important;
+  --dsw-specific-login-input:#2a1a22 !important;
+  --dsw-alias-interactive-bg-hover-accent:rgba(244,143,177,0.18) !important;
+  --dsw-alias-interactive-bg-active:rgba(244,143,177,0.12) !important;
+  --dsw-alias-label-primary-bluish:#f48fb1 !important;
+  --dsw-alias-markdown-inline-code:#3b2730 !important;
+  --dsw-alias-markdown-code-block:#33202a !important;
+  --dsw-alias-markdown-code-block-banner:#33202a !important;
+  --dsw-alias-markdown-code-segment-selected:#3b2730 !important;
+  --dsw-alias-markdown-code-segment-unselected:#33202a !important;
+  --dsw-alias-markdown-tag:#3b2730 !important;
+  --dsw-alias-markdown-citation:#3b2730 !important;
+  --dsw-alias-markdown-placeholder:#33202a !important;
+  --dsw-alias-scrollbar-bg-l1:#6b3a4a !important;
+  --dsw-alias-scrollbar-hover-l1:#8a4a5e !important;
+  --dsw-alias-scrollbar-bg-l2:#6b3a4a !important;
+  --dsw-alias-scrollbar-hover-l2:#8a4a5e !important;
+}
+
+/* ---------- 壁纸：用户指定的 Hello Kitty 图片（浅色，原图铺满） ---------- */
+.pI_x6G_frame{
+  background: url("/assets/kitty-wallpaper.jpg") center / cover no-repeat !important;
+}
+
+/* ---------- 壁纸：同一图片（深色，叠加暗色柔化保证文字可读） ---------- */
+body[data-ds-dark-theme] .pI_x6G_frame{
+  background: linear-gradient(rgba(30,18,24,0.45), rgba(30,18,24,0.45)), url("/assets/kitty-wallpaper.jpg") center / cover no-repeat !important;
+}

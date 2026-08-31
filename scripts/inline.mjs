@@ -14,6 +14,8 @@ const img = readFileSync(imgPath);
 const b64 = img.toString("base64");
 const dataUri = `url("data:image/jpeg;base64,${b64}")`;
 
-const inline = css.replaceAll('url("./assets/kitty-wallpaper.jpg")', dataUri);
+const inline = css
+  .replaceAll('url("./assets/kitty-wallpaper.jpg")', dataUri)
+  .replaceAll('url("/kitty/wallpaper.jpg")', dataUri);
 writeFileSync(outPath, inline, "utf8");
 console.log(`wrote ${outPath} (${Buffer.byteLength(inline)} bytes)`);

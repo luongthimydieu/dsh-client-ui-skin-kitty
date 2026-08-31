@@ -40,6 +40,9 @@
     "./skin.json": "./skin.json"
   },
   "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
     "client": {
       "platform": "web",
       "inject": [
@@ -58,6 +61,7 @@
     "theme.css",
     "theme.inline.css",
     "skin.json",
+    "cordis.patch.yml",
     "assets/",
     "lib/"
   ],

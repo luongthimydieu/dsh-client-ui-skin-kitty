@@ -1,0 +1,21 @@
+# dsh-client-ui-skin-kitty — bundle patch
+# ---------------------------------------------------------------------------
+# Registered via `dsh.bundle.patch` in package.json. Once this package is a
+# dependency of a dsh profile (`dsh plugin add dsh-client-ui-skin-kitty`), the
+# reconcile step appends it to the profile's `dsh.profile.bundles` layer list
+# and this row becomes a static loader entry:
+#
+#   - Host 半:  the package main (lib/index.js, `export function apply`) is
+#               instantiated at boot — it registers /ws-api + /ws-file +
+#               /kitty/theme.css + /kitty/wallpaper.jpg on the webServer.
+#   - Client 半: dsh-client-modules scans this entry, reads the package's
+#               `dsh.client` declaration and serves ./lib/client.js, which
+#               auto-opens the right-side workspace file panel + token chart
+#               and injects the Kitty theme stylesheet on startup.
+#
+# 修复说明：此前右侧栏插件只作为“动态插件”运行（cordis_run 后仅在当次会话
+# 生效，刷新/重启后需要重新激活）。注册为本 bundle 行后，插件随 Harness 启动
+# 自动加载，右侧栏与背景主题一起成为静态效果。
+- insert:
+    - id: dsh-client-ui-skin-kitty
+      name: dsh-client-ui-skin-kitty

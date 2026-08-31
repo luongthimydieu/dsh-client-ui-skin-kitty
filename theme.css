@@ -213,12 +213,12 @@ body[data-ds-dark-theme] {
 
 /* ---------- 壁纸：用户指定照片（浅色，原图铺满） ---------- */
 .pI_x6G_frame {
-  background: url("./assets/kitty-wallpaper.jpg") center / cover no-repeat !important;
+  background: url("/kitty/wallpaper.jpg") center / cover no-repeat !important;
 }
 
 /* ---------- 壁纸：同一照片（深色，叠加暗色柔化保证文字可读） ---------- */
 body[data-ds-dark-theme] .pI_x6G_frame {
   background:
     linear-gradient(rgba(30, 18, 24, 0.45), rgba(30, 18, 24, 0.45)),
-    url("./assets/kitty-wallpaper.jpg") center / cover no-repeat !important;
+    url("/kitty/wallpaper.jpg") center / cover no-repeat !important;
 }
