@@ -211,14 +211,44 @@ body[data-ds-dark-theme] {
   --dsw-specific-menu: rgba(66, 44, 54, 0.90) !important;
 }
 
-/* ---------- 壁纸：用户指定照片（浅色，原图铺满） ---------- */
-.m45BUG_frame {
-  background: url("/kitty/wallpaper.jpg") center / cover no-repeat !important;
+/* ==========================================================================
+ * 壁纸
+ * --------------------------------------------------------------------------
+ * DSH 的主框架类名是 CSS Module 哈希（0.7.1 = m45BUG_frame，0.9.0 =
+ * pI_x6G_frame，每次升级都可能变），写死哈希会在下次升级时静默失效。
+ * 因此这里分两层，任一层生效即可看到壁纸：
+ *   1) body 铺壁纸 —— 与版本无关的兜底（框架背景是半透明的 bg-base，
+ *      壁纸能透出来）；
+ *   2) 主框架元素本身铺壁纸 —— 用「已知哈希 + 只按 _frame 结尾且层级很浅」
+ *      的多重选择器匹配，不依赖具体哈希值。
+ * ========================================================================== */
+
+/* ---------- 浅色：壁纸铺满 ---------- */
+/* 壁纸只在这里写一次 URL，其余规则引用变量；theme.inline.css 因此只需内嵌一份 base64 */
+body {
+  --kitty-wallpaper: url("/kitty/wallpaper.jpg");
+  background: var(--kitty-wallpaper) center / cover no-repeat fixed !important;
 }
 
-/* ---------- 壁纸：同一照片（深色，叠加暗色柔化保证文字可读） ---------- */
-body[data-ds-dark-theme] .m45BUG_frame {
+.pI_x6G_frame,
+.m45BUG_frame,
+#root > [class$="_frame"],
+#root > div > [class$="_frame"] {
+  background: var(--kitty-wallpaper) center / cover no-repeat !important;
+}
+
+/* ---------- 深色：同一照片叠加暗色柔化，保证文字可读 ---------- */
+body[data-ds-dark-theme] {
   background:
     linear-gradient(rgba(30, 18, 24, 0.45), rgba(30, 18, 24, 0.45)),
-    url("/kitty/wallpaper.jpg") center / cover no-repeat !important;
+    var(--kitty-wallpaper) center / cover no-repeat fixed !important;
+}
+
+body[data-ds-dark-theme] .pI_x6G_frame,
+body[data-ds-dark-theme] .m45BUG_frame,
+body[data-ds-dark-theme] #root > [class$="_frame"],
+body[data-ds-dark-theme] #root > div > [class$="_frame"] {
+  background:
+    linear-gradient(rgba(30, 18, 24, 0.45), rgba(30, 18, 24, 0.45)),
+    var(--kitty-wallpaper) center / cover no-repeat !important;
 }

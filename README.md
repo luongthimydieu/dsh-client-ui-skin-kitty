@@ -33,10 +33,15 @@ dsh-client-ui-skin-kitty/
 4. **Client 半**（`lib/client.js`）启动时注入
    `<link rel="stylesheet" href="/kitty/theme.css">`（幂等），主题即生效。
 
-> 踩坑记录：Host 半**不能**用 `ctx.get("fs")` / `ctx.get("webServer")` —— profile 根 context
-> 里拿不到这些服务，会导致插件静默失效（apply 提前 return、无任何报错）。必须显式
-> `ctx.inject(["webServer"], cb)`。壁纸选择器用的是当前 DSH Desktop 版本的
-> `.m45BUG_frame` 主框架类（旧版为 `.pI_x6G_frame`，换版本需同步更新）。
+> 踩坑记录：
+> - Host 半**不能**用 `ctx.get("fs")` / `ctx.get("webServer")` —— profile 根 context
+>   里拿不到这些服务，会导致插件静默失效（apply 提前 return、无任何报错）。必须显式
+>   `ctx.inject(["webServer"], cb)`。
+> - 主框架类名是 **CSS Module 哈希**，随 DSH 版本变化（0.7.1 = `.m45BUG_frame`，
+>   0.9.0 = `.pI_x6G_frame`）。**不要写死单个哈希**：`theme.css` 现在同时用
+>   「已知哈希 + `#root > [class$="_frame"]` 层级选择器 + `body` 兜底」三层匹配，
+>   升级后任一命中即可显示壁纸。壁纸 URL 通过 `--kitty-wallpaper` 变量只写一次，
+>   内联版因此只内嵌一份 base64。
 
 ## 安装进 DSH profile（桌面端/Web 端重启后自动加载）
 
@@ -50,8 +55,11 @@ dsh plugin --profile web add file:/path/to/dsh-client-ui-skin-kitty
 ## 换壁纸 / 改主题
 
 - 换壁纸：替换 `assets/kitty-wallpaper.jpg`，再 `npm run inline`（生成新内联版）。
-- 改主题：直接编辑 `theme.css`，改完 `npm run inline`；若 DSH 版本的主框架类变了，
-  同步更新 `theme.css` 里的 `.m45BUG_frame` 选择器。
+- 改主题：直接编辑 `theme.css`（Host 每次请求实时读取，**改完刷新页面即生效**，
+  无需重启 Harness），改完 `npm run inline` 同步内联版。
+- 若某天壁纸又不显示：多半是 DSH 升级后主框架类名/结构变了，按上面的三层选择器
+  再加一条当前版本的哈希即可（用 `dsh-client-ui-layout` 的 `AppFrame` CSS 里
+  `<hash>_frame` 那个类名）。
 
 ## 打包 & 发布
 
