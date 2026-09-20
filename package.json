@@ -65,5 +65,8 @@
   "scripts": {
     "inline": "node scripts/inline.mjs",
     "pack": "npm pack"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
